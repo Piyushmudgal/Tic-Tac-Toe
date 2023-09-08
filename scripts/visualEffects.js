@@ -6,8 +6,6 @@ cellElementsArray.forEach(element => {
   cellElements.push({element, isSet: false}); 
   });
 
-console.log(cellElements);
-
 for(let i = 0; i < cellElements.length; i++) {
   cellElements[i].element.addEventListener('mouseenter', () => {
     if (!cellElements[i].isSet)
@@ -20,12 +18,20 @@ for(let i = 0; i < cellElements.length; i++) {
   })
 
   cellElements[i].element.addEventListener('click', () => {
-    if (!cellElements[i].isSet) {
-      console.log('clicked');
-      cellElements[i].element.innerHTML = `<img src="images/${marker[playerMarker]}.png">`;
-      cellElements[i].isSet = true;
-    }
+    putMarkerDown(playerMarker, i);
+    setTimeout(() => {
+      playGame();
+    }, 200);
   })
+}
+
+function putMarkerDown(playerMarker, index) {
+  if (!cellElements[index].isSet) {
+    cellElements[index].element.innerHTML = `<img 
+    class='setimg' src="images/${marker[playerMarker]}.png">`;
+    cellElements[index].isSet = true;
+    board[index] = playerMarker;
+  }
 }
 
 let playerMarker, compMarker;
@@ -44,6 +50,5 @@ markerElementsArray.forEach((element, index) => {
       document.querySelector('.chooseMarker').classList.add('hide-display');
       document.querySelector('.board').classList.remove('hidden');  
     }, 400);
-    console.log(playerMarker + ' ' + compMarker);
   })
 });
