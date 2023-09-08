@@ -18,10 +18,11 @@ body {
   position: fixed;
   z-index: inherit;
   color: white;
-  font-size: 300%;
+  font-size: 3vw;
+  text-align: center;
   opacity: 1;
-  top: 10%px;
-  left: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
   pointer-events: none;
 }
 .choose-cross,

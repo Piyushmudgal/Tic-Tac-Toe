@@ -28,7 +28,6 @@ for(let i = 0; i < cellElements.length; i++) {
   })
 }
 
-
 let playerMarker, compMarker;
 const marker = ['cross', 'circle']
 
@@ -47,8 +46,4 @@ markerElementsArray.forEach((element, index) => {
     }, 400);
     console.log(playerMarker + ' ' + compMarker);
   })
-})
-
-
-
-
+});
