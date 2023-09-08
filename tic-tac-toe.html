@@ -7,7 +7,19 @@
   <link rel="stylesheet" href="styles/tic-tac-toe.css">
 </head>
 <body>
-  <div class="board" onmouse>
+  <div class="chooseMarker">
+    <h1>Choose Your Marker</h1>
+    <div class="choose-cross">
+      <img src="images/cross.png">
+      <p>Cross</p>
+    </div>
+    <div class="choose-circle">
+      <img src="images/circle.png">
+      <p>Circle</p>
+    </div>
+  </div>
+
+  <div class="board hidden">
     <div class="cell borderless-top borderless-left"></div>
     <div class="cell borderless-top"></div>
     <div class="cell borderless-top borderless-right"></div>
@@ -18,8 +30,13 @@
     <div class="cell borderless-bottom"></div>
     <div class="cell borderless-right borderless-bottom"></div>
   </div>
-  
+  <!-- <button class="hide-button" onclick="
+  document.querySelector('.chooseMarker').classList.add('hidden');
+  ">hide grid</button>
+  <button class="show-button" onclick="
+  document.querySelector('.chooseMarker').classList.remove('hidden');
+  ">Show grid</button> -->
 
-  <script src="scripts/tic-tac-toe.js"></script>
+  <script src="scripts/visualEffects.js"></script>
 </body>
 </html>

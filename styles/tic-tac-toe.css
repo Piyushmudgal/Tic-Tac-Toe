@@ -1,7 +1,77 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.chooseMarker {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  align-items: stretch;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 2;
+}
+
+.chooseMarker h1 {
+  position: fixed;
+  z-index: inherit;
+  color: white;
+  font-size: 300%;
+  opacity: 1;
+  top: 10%px;
+  left: 40%;
+  pointer-events: none;
+}
+.choose-cross,
+.choose-circle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.choose-cross:hover,
+.choose-circle:hover {
+  opacity: 1;
+}
+
+.choose-cross:active,
+.choose-circle:active {
+  opacity: 0.5;
+}
+
+.choose-cross {
+  background-color: rgba(255, 73, 73);
+}
+
+.choose-circle {
+  background-color: rgb(85, 85, 255);
+}
+
+.chooseMarker img {
+  width: 40%;
+}
+
+.chooseMarker p {
+  color: white;
+  font-size: 30px;
+}
+
+
 .board {
+  position: fixed;
+  opacity: 1;
   display: grid;
   grid-template-columns: 300px 300px 300px;
-  margin-left: 450px;
+  top: 10px;
+  left: 500px;
+  right: 0;
+  margin: auto;
 }
 
 .cell {
@@ -34,5 +104,8 @@
 }
 
 .hidden {
+  opacity: 0;
+}
+.hide-display {
   display: none;
 }
