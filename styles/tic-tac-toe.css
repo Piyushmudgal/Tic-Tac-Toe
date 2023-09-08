@@ -1,0 +1,38 @@
+.board {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  margin-left: 450px;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 6px solid black;
+  height: 300px;
+}
+
+.borderless-top {
+  border-top: none;
+}
+.borderless-right {
+  border-right: none;
+}
+.borderless-left {
+  border-left: none;
+}
+.borderless-bottom {
+  border-bottom: none;
+}
+
+.cell img {
+  height: 80%;
+}
+
+.cell .imghover {
+  opacity: 20%;
+}
+
+.hidden {
+  display: none;
+}
