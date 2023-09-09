@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic Tac Toe</title>
+  <title>Tic Shinobi Arts Esoteric TextTac Toe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/tic-tac-toe.css">
 </head>
 <body>
-  <div class="chooseMarker">
-    <h1>Choose Your Marker</h1>
-    <div class="choose-cross">
-      <img src="images/cross.png">
-      <p>Cross</p>
+  <div class="chooseMarker-container">
+    <h1>Choose</h1>
+    <div class="chooseMarker">
+      <div class="choose-cross">
+        <img src="images/cross.png">
+        <p>Cross</p>
+      </div>
+      <div class="choose-circle">
+        <img src="images/circle.png">
+        <p>Circle</p>
+      </div>
     </div>
-    <div class="choose-circle">
-      <img src="images/circle.png">
-      <p>Circle</p>
+    <div class="or">
+      <div class="o">O</div>
+      <div class="r">R</div>
     </div>
   </div>
 
-  <div class="board hidden">
+
+  <div class="board hide-display">
     <div class="cell borderless-top borderless-left"></div>
     <div class="cell borderless-top"></div>
     <div class="cell borderless-top borderless-right"></div>
@@ -30,8 +40,13 @@
     <div class="cell borderless-bottom"></div>
     <div class="cell borderless-right borderless-bottom"></div>
   </div>
+  <div class="results-container hide-display">
+    <p></p>
+    <button class="reset-button">Play Again</button>
+  </div>
 
   <script src="scripts/visualEffects.js"></script>
   <script src="scripts/gameMechanics.js"></script>
 </body>
 </html>
+<p></p>

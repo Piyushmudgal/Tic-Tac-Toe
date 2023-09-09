@@ -1,15 +1,18 @@
 const board = ['', '', '', '', '', '', '', '', ''];
 
+let isGameOver = false;
 
 function playGame() {
   let gameState = isOver(playerMarker);
   if (gameState === 1 || gameState === 0) {
+    isGameOver = true;
     displayResults(gameState, playerMarker);
   }
   else {
     playCompMove();
     gameState = isOver(compMarker);
     if (gameState === 1) {
+      isGameOver = true;
       setTimeout(() => {
         displayResults(gameState, compMarker);
       }, 200);
@@ -18,15 +21,23 @@ function playGame() {
 }
 
 function displayResults(result, marker) {
+
+  let resultElement = document.querySelector('.results-container p');
+
   if (result === 1 && marker === playerMarker) {
-    alert('You Win!');
+    resultElement.innerText = 'You Win!';
   }
   else if (result === 1 && marker === compMarker) {
-
-    alert('Computer Wins');
+    resultElement.innerText = 'Computer Wins!';
   }
   else if (result === 0)
-    alert('Its a Draw!');
+  resultElement.innerText = 'It\'s a Draw!';
+  
+  resultElement = resultElement.parentNode;
+  resultElement.classList.remove('hide-display');
+  document.querySelector('.board').classList.add('translate-left');
+  resultElement.classList.add('fadeIn')
+  resultElement.classList.add('translate-up');
 }
 
 function playCompMove() {
@@ -70,7 +81,6 @@ function isOver(marker) {
   }
 
   //Checking diagonals
-
   if ((board[0] === board[4] && board[0] === board[8] && board[0] !== '') || (board[2] === board[4] && board[2] === board[6] && board[4] !== '')) {
     if (board[4] === marker)
         return 1;
